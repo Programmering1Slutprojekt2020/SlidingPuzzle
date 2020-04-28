@@ -1,0 +1,10 @@
+C:\Users\0111lith\source\repos\SlidingPuzzle\SlidingPuzzle\bin\Debug\SlidingPuzzle.exe.config
+C:\Users\0111lith\source\repos\SlidingPuzzle\SlidingPuzzle\bin\Debug\SlidingPuzzle.exe
+C:\Users\0111lith\source\repos\SlidingPuzzle\SlidingPuzzle\bin\Debug\SlidingPuzzle.pdb
+C:\Users\0111lith\source\repos\SlidingPuzzle\SlidingPuzzle\obj\Debug\SlidingPuzzle.csprojAssemblyReference.cache
+C:\Users\0111lith\source\repos\SlidingPuzzle\SlidingPuzzle\obj\Debug\SlidingPuzzle.Form1.resources
+C:\Users\0111lith\source\repos\SlidingPuzzle\SlidingPuzzle\obj\Debug\SlidingPuzzle.Properties.Resources.resources
+C:\Users\0111lith\source\repos\SlidingPuzzle\SlidingPuzzle\obj\Debug\SlidingPuzzle.csproj.GenerateResource.cache
+C:\Users\0111lith\source\repos\SlidingPuzzle\SlidingPuzzle\obj\Debug\SlidingPuzzle.csproj.CoreCompileInputs.cache
+C:\Users\0111lith\source\repos\SlidingPuzzle\SlidingPuzzle\obj\Debug\SlidingPuzzle.exe
+C:\Users\0111lith\source\repos\SlidingPuzzle\SlidingPuzzle\obj\Debug\SlidingPuzzle.pdb
