@@ -15,6 +15,8 @@ namespace SlidingPuzzle
         int förflyttningar = 0;
         int[,] koordinater = new int[4, 4];
         bool vinst = false;
+        //int[,] test1 = new int[4, 4] { { 0, 4, 8, 12 }, { 1, 5, 9, 13 }, { 2, 6, 10, 14 }, { 3, 7, 11, 15 } };
+        int[,] test2 = new int[4, 4] { { 1, 5, 9, 13 }, { 2, 6, 10, 14 }, { 3, 7, 11, 15 }, { 4, 8, 12, 0 } };
 
         public Form1()
         {
@@ -26,8 +28,8 @@ namespace SlidingPuzzle
             Graphics g = e.Graphics;
             SolidBrush grå = new SolidBrush(Color.LightGray);
             SolidBrush svart = new SolidBrush(Color.Black);
-            Font font = new Font(FontFamily.GenericSansSerif,24,FontStyle.Regular);
-            if (vinst==true)
+            Font font = new Font(FontFamily.GenericSansSerif,25,FontStyle.Regular);
+            if (vinst)
             {
                 g.DrawString("Vinst", font, svart, 50, 50);
             }
@@ -70,7 +72,6 @@ namespace SlidingPuzzle
             }
             test();
         }
-
         private void panel1_MouseClick(object sender, MouseEventArgs e)
         {
             int x = e.X / 50;
@@ -113,34 +114,22 @@ namespace SlidingPuzzle
             label1.Text = "Antal förflyttningar: " + förflyttningar;
             test();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void test()
         {
+            vinst = true;
             for (int x = 0; x < 4; x++)
             {
                 for (int y = 0; y < 4; y++)
                 {
-                    koordinater[x, y] = (y * 4 + x);
+                    if (koordinater[x, y] != test2[x, y])
+                    {
+                        vinst = false;
+                        break;
+                    }
                 }
-            }
-            test();
-        }
-
-        private void test()
-        {
-            int temp = 0;
-            int rätt = 0;
-            for (int b = 0; b < 4; b++)
-            {
-                for (int a = 0; a < 4; a++)
-                {
-                    if (koordinater[a, b] >= temp) rätt++;
-                    if (temp == 15 && koordinater[a, b] == 0) rätt++;
-                    temp = koordinater[a, b];
-                }
-                if (rätt >= 16) vinst = true;
             }
             panel1.Invalidate();
         }
+
     }
 }
