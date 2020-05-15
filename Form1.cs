@@ -15,8 +15,7 @@ namespace SlidingPuzzle
         int förflyttningar = 0;
         int[,] koordinater = new int[4, 4];
         bool vinst = false;
-        //int[,] test1 = new int[4, 4] { { 0, 4, 8, 12 }, { 1, 5, 9, 13 }, { 2, 6, 10, 14 }, { 3, 7, 11, 15 } };
-        int[,] test2 = new int[4, 4] { { 1, 5, 9, 13 }, { 2, 6, 10, 14 }, { 3, 7, 11, 15 }, { 4, 8, 12, 0 } };
+        int[,] test2 = new int[4, 4] { { 1, 5, 9, 13 }, { 2, 6, 10, 14 }, { 3, 7, 11, 15 }, { 4, 8, 12, 0 } }; //Modell för den slutliga positionen
 
         public Form1()
         {
@@ -33,7 +32,7 @@ namespace SlidingPuzzle
             {
                 g.DrawString("Vinst", font, svart, 50, 50);
             }
-            else
+            else //Om vinst är true så ritas inte brickorna ut
             {
                 for (int x = 0; x < 4; x++)
                 {
@@ -57,11 +56,11 @@ namespace SlidingPuzzle
             Random r = new Random();
             List<int> tal = new List<int>();
             int index;
-            for(int i = 0; i < 16; i++)
+            for(int i = 0; i < 16; i++) //Listan fylls med alla tal som ska vara med
             {
                 tal.Add(i);
             }
-            for (int x = 0; x < 4; x++)
+            for (int x = 0; x < 4; x++) //Plockar ut slumpmässiga index ur listan, för att inte få dubletter
             {
                 for (int y = 0; y < 4; y++)
                 {
@@ -76,7 +75,8 @@ namespace SlidingPuzzle
         {
             int x = e.X / 50;
             int y = e.Y / 50;
-            if (x < 3) {
+            if (x < 3)
+            {
                 if (koordinater[x + 1, y] == 0)
                 {
                     koordinater[x + 1, y] = koordinater[x, y];
@@ -111,13 +111,15 @@ namespace SlidingPuzzle
                     förflyttningar++;
                 }
             }
+            //Kontrollerar om det finns ett ledigt utrymme på någon av sidorna och flyttar om det gör det
+
             label1.Text = "Antal förflyttningar: " + förflyttningar;
             test();
         }
-        private void test()
+        private void test() //Metod för vinstkontroll och invalidation
         {
-            vinst = true;
-            for (int x = 0; x < 4; x++)
+            vinst = true;  //Utgår från vinst, jämför sedan spelets array med vinstarrayen. Om något inte matchar sätts vinsten till false
+            for (int x = 0; x < 4; x++) 
             {
                 for (int y = 0; y < 4; y++)
                 {
